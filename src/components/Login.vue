@@ -59,7 +59,7 @@
           })
           this.$refs.loginFormRef.validate(async valid => {
               if (!valid) return;
-              const {data:res} =await this.$http.post('admin/login',param);
+              const {data:res} =await this.$http.post('http://localhost:8890/admin/login',param);
               console.log(res)
               if (res.result !== '登录成功') return this.$message.error(res.result);
               this.$message.success(res.result);
